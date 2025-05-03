@@ -3,6 +3,8 @@ class Song {
   final String artist;
   final String genre;
   final String imageUrl;
+  final String lyrics;
+  final String description;
   final String audioPath; // Path to the MP3 file
   final Duration duration;
 
@@ -12,6 +14,8 @@ class Song {
     required this.genre,
     required this.imageUrl,
     required this.audioPath,
+    required this.lyrics,
+    required this.description,
     this.duration = const Duration(minutes: 3, seconds: 30),
   });
 

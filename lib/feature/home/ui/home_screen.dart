@@ -1,4 +1,3 @@
-// home_screen.dart
 import 'package:assisgnment/feature/home/ui/song_play.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +8,7 @@ import '../home_bloc/song_bloc.dart';
 import '../model/song_model.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,15 +36,6 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {},
-      //   backgroundColor: AppTheme.lightPurple,
-      //   child: const Icon(
-      //     Icons.mic,
-      //     color: AppTheme.white,
-      //   ),
-      // ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.,
       body: BlocBuilder<SongBloc, SongState>(
         builder: (context, state) {
           if (state is SongLoading) {
@@ -196,7 +186,6 @@ class HomeScreen extends StatelessWidget {
 
                       SizedBox(height: screenSize.height * 0.03),
 
-                      // Trending Playlists
                       _buildSectionHeader(
                           context, 'Trending Playlists', screenSize),
                       SizedBox(height: screenSize.height * 0.02),
@@ -204,7 +193,6 @@ class HomeScreen extends StatelessWidget {
 
                       SizedBox(height: screenSize.height * 0.03),
 
-                      // Trending Songs
                       _buildSectionHeader(
                           context, 'Trending Songs', screenSize),
                       SizedBox(height: screenSize.height * 0.02),
@@ -212,21 +200,18 @@ class HomeScreen extends StatelessWidget {
 
                       SizedBox(height: screenSize.height * 0.03),
 
-                      // SongGPT Songs
                       _buildSectionHeader(context, 'SongGPT Songs', screenSize),
                       SizedBox(height: screenSize.height * 0.02),
                       _buildSongsRow(state.songGptSongs, screenSize),
 
                       SizedBox(height: screenSize.height * 0.03),
 
-                      // Genres
                       _buildSectionHeader(context, 'Genres', screenSize),
                       SizedBox(height: screenSize.height * 0.02),
                       _buildGenresRow(state.genres, screenSize),
 
                       SizedBox(height: screenSize.height * 0.03),
 
-                      // New Songs
                       _buildSectionHeader(context, 'New Songs', screenSize),
                       SizedBox(height: screenSize.height * 0.02),
                       _buildNewSongsList(state.songs, screenSize),
